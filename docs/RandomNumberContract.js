@@ -10,7 +10,7 @@ RandomNumberContract.prototype = {
 
   requestNumber: function (max, zero) {
     if(Blockchain.transaction.value != 0) {
-        throw new Error("I don't want your money.");
+        throw new Error("We don't accept any type of currency.");
     }
     if(isNaN(max) || max < 1) {
       throw new Error("max is not a number.");
