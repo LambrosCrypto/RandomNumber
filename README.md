@@ -1,2 +1,3 @@
-Built for Nebulas by LambrosCrypto.
-License: https://github.com/lambroscrypto/RandomNumber/tree/master/
+RANDOM NUMBER GENERATOR, powered by Nebulas Blockchain. 
+
+
