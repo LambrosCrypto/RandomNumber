@@ -2,13 +2,13 @@
 // The blockchain selets a random number between 0 and a maximum the user selects.
 
 var RandomNumberContract = function() {
-  LocalContractStorage.defineMapProperty(this, "hash_to_rnc") // Max, Number, Data, Date
+  LocalContractStorage.defineMapProperty(this, "hash_to_rnc") // Max, Number, Zero, Date
 }
 
 RandomNumberContract.prototype = {
   init: function() { },
 
-  requestNumber: function (max, data) {
+  requestNumber: function (max, zero) {
     if(Blockchain.transaction.value != 0) {
         throw new Error("I don't want your money.");
     }
@@ -17,7 +17,7 @@ RandomNumberContract.prototype = {
     }
 
     var number = Math.floor(Math.random() * max);
-    this.hash_to_rnc.put(Blockchain.transaction.hash, {max, number, data, date: Date.now()});
+    this.hash_to_rnc.put(Blockchain.transaction.hash, {max, number, zero, date: Date.now()});
   },
 
   getNumber: function (hash) {
