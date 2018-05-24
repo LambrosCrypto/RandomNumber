@@ -1,4 +1,4 @@
-RANDOM NUMBER GENERATOR, powered by Nebulas Blockchain. 
+#RANDOM NUMBER GENERATOR, powered by Nebulas Blockchain. 
 
 We decided to build from scratch a DApp that generates a random number between 0 and a maximum. - Maximum is choosen by the user (maximum>0). We made a beautiful friendly user interface so that anyone can easily use our site. You, the user, will be guided on who to use our DApp - what this DApp actually does,  how to install the required $nas web-wallet extension and how to insert the data. We also added a filter to avoid users sending funds to the  DApp contract.
 
