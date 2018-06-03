@@ -81,7 +81,7 @@
                     <input type=number id=new_request_max class="form-control"></input>
                   </div>
                   <div class="input-group-text">
-                    <button href="#features" id=request_number onclick="myFunction();myFunction2();javascript:onClickRequestNumber()" class="learn-more-btn">Request Random Number</button>
+                    <button href="#features" id=request_number onclick="myFunction();javascript:onClickRequestNumber()" class="learn-more-btn">Request Random Number</button>
                   </div>
                 </div>
               </div>
@@ -94,7 +94,12 @@
               }
               </script>
               <!-- Displays a refresh button until the data is available -->
-              <div id=rnc_request_pending>
+              <div id=rnc_request_pending style="display:none;">
+                <script>
+    						if(window.location.href.indexOf("txhash=") != -1){
+    							document.getElementById("rnc_request_pending").style.display = "block";
+    						}
+    						</script>
                 <h1 class="animated fadeInDown">Processing</h1>
                 <br>
                   <div class="loader"></div>
@@ -114,20 +119,9 @@
                       <button id=refresh onclick="javascript:goHome()" class="learn-more-btn">Go home</button>
                   </div>
               </div>
-            <!-- HIDE INPUT INTERFAZE FUNCTION -->
-            <script>
-              function myFunction() {
-                var x = document.getElementById("hide");
-                if (x.style.display === "none") {
-                  x.style.display = "block";
-                } else {
-                  x.style.display = "none";
-                }
-              }
-            </script>
             <!-- HIDE RESULTS INTERFAZE FUNCTION -->
             <script>
-              function myFunction2() {
+              function myFunction() {
                 var y = document.getElementById("content2");
                 if (y.style.display === "none") {
                   y.style.display = "block";
@@ -212,6 +206,8 @@
                   if (history.pushState) {
                     var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?txhash=' + resp.txhash;
                     window.history.pushState({path:newurl},'',newurl);
+                    $("#hide").hide();
+  									$("#rnc_request_pending").show();
                   }
               }
               //GO TO MAIN PAGE (INDEX) FUNCTION
